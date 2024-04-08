@@ -10,4 +10,7 @@ class PongApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void contextLoadsJihyeTest() {
+    }
 }
