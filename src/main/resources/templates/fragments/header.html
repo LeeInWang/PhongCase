@@ -1,12 +1,215 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
+    <style>
+        @font-face {
+            font-family: 'SOYOMapleBoldTTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'omyu_pretty';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @media (min-width:768px) and (max-width: 1023px) {
+            .navLogo {
+                font-size: 2rem; /* 제목 크기를 줄임 */
+            }
+            .navIcons button {
+                font-size: 2rem; /* 아이콘 크기를 줄임 */
+            }
+        }
+
+        .wrap {
+            width: calc(100% - 100px);
+            margin-left: 50px;
+            margin-right: 50px;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        body {
+            text-align: center;
+            margin: 0;
+        }
+
+        .nav {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navLogo {
+            flex: 1;
+            text-align: center;
+            font-family: 'omyu_pretty';
+            font-size: 4rem;
+            margin-left: 30px;
+        }
+
+        .navIcons {
+            padding-bottom: 0px;
+        }
+
+        .navIcons button {
+            font-size: 98px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* categoryNav */
+        .categoryNav {
+            overflow: hidden;
+            font-family: 'omyu_pretty';
+        }
+
+        .categoryNav a {
+            float: left;
+            display: block;
+            background-color: #d8ff8b;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .categoryNav a:hover {
+            background-color: #a9f3ba;
+            color: navy;
+
+        }
+
+        .categoryNav a.active {
+            background-color: #a9f3ba;
+            color: navy;
+            font-weight: bold;
+        }
+        .nav2 {
+            background-color: #d8ff8b;
+            color: navy;
+            font-family: 'omyu_pretty';
+            font-weight: bold;
+        }
+        .categoryNav .searchNav {
+            float: right;
+        }
+
+        .categoryNav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .categoryNav .searchNav button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .categoryNav .searchNav button:hover {
+            background: #f9fe86;
+            color: navy;
+            font-weight: bold;
+        }
+
+        .searchNav button:hover {
+            background: #d8ff8b;
+        }
+
+        @media screen and (max-width: 600px) {
+            .categoryNav .searchNav {
+                float: none;
+            }
+            .categoryNav a, .categoryNav input[type=text], .categoryNav .searchNav button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .categoryNav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+<body>
+<div class="wrap" style="padding-top: 10px;">
+    <div class="nav">
+        <div class="navLogo">퐁케이스</div>
+        <div class="navIcons">
+            <button onclick="login()"><span class="material-symbols-outlined">login</span></button>
+            <button onclick="logout()"><span class="material-symbols-outlined">logout</span></button>
+            <button onclick="mypage()"><span class="material-symbols-outlined">person</span></button>
+            <button onclick="shopping()"><span class="material-symbols-outlined">shopping_bag</span></button>
+        </div>
+    </div>
+
+    <div class="nav2">
+        <div class="categoryNav">
+            <a class="active" href="#">하드</a>
+            <a href="#">젤리</a>
+            <a href="#">z-플립</a>
+            <a href="#">공지사항</a>
+            <div class="searchNav">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="검색..어.." name="search">
+                    <button type="submit"><i class="fa fa-search"><span class="material-symbols-outlined">
+search</span></i></button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        // navIcon
+        function login() {
+            // 로그인
+        }
+
+        function logout() {
+            // 로그아웃
+        }
+
+        function mypage() {
+            // 마이페이지로 이동
+        }
+
+        function shopping() {
+            // 장바구니 이동
+        }
+
+        //categoryNav
+        function myFunction() {
+            var x = document.getElementById("categoryNav");
+            if (x.className === "categoryNav") {
+                x.className += " responsive";
+            } else {
+                x.className = "categoryNav";
+            }
+        }
+    </script>
 </body>
+
+</head>
 </html>
