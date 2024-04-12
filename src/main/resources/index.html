@@ -1,40 +1,172 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
-<!--      layout:decorate="~{layouts/layout}">-->
-<head>
-    <!-- css 만들어 말어? link rel="stylesheet" href=".resources/static/.css?"-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <style>
-        @font-face {
-            font-family: 'SOYOMapleBoldTTF';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
-            font-style: normal;
-        }
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-        /* 기본 스타일 */
-        body {
-            text-align: center;
-            font-family: 'SOYOMapleBoldTTF';
-        }
-
-        h1 {
-            color: navy;
-            font-size: 2.5rem;
-
-        }
-
-        /* 너비 최대: 1023px */
-        @media (min-width:768px) and (max-width: 1023px) {
-            h1 {
-                font-size: 1.5rem;  /* 제목 크기를 크게 조정 */
+        <style>
+            @font-face {
+                font-family: 'SOYOMapleBoldTTF';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+                font-style: normal;
             }
-        }
-    </style>
-</head>
-<body>
-<h1>메인페이지</h1>
-</body>
+            @font-face {
+                font-family: 'omyu_pretty';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            @media (min-width:768px) and (max-width: 1023px) {
+                .navLogo {
+                    font-size: 2rem; /* 제목 크기를 줄임 */
+                }
+                .navIcons button {
+                    font-size: 2rem; /* 아이콘 크기를 줄임 */
+                }
+            }
+
+            .wrap {
+                width: calc(100% - 100px);
+                margin-left: 50px;
+                margin-right: 50px;
+                position: relative;
+                box-sizing: border-box;
+            }
+
+            body {
+                text-align: center;
+                margin: 0;
+            }
+
+            .mySlides {
+                display: none;
+                padding-top: 20px;
+            }
+
+            .cursor {
+                cursor: pointer;
+            }
+
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 55%;
+                width: auto;
+                padding: 16px;
+                margin-top: -50px;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            .next {
+                right: 0;
+            }
+
+            .prev {
+                left: 0;
+            }
+
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+                height: 500px;
+            }
+
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .column {
+                float: left;
+                width: 16.66%;
+                height: 100px;
+            }
+
+            .demo {
+                opacity: 0.6;
+            }
+
+            .active,
+            .demo:hover {
+                opacity: 1;
+            }
+
+            .nav {
+                margin-top: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .navLogo {
+                flex: 1;
+                text-align: center;
+                font-family: 'omyu_pretty';
+                font-size: 4rem;
+                margin-left: 30px;
+            }
+
+            .navIcons {
+                padding-bottom: 0px;
+            }
+
+            .navIcons button {
+                font-size: 98px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                outline: none;
+            }
+
+        </style>
+
+    </head>
+
+    <div class="wrap" style="padding-top: 10px;">
+        <div class="nav">
+            <div class="navLogo">퐁케이스</div>
+            <div class="navIcons">
+                <button onclick="login()"><span class="material-symbols-outlined">login</span></button>
+                <button onclick="logout()"><span class="material-symbols-outlined">logout</span></button>
+                <button onclick="mypage()"><span class="material-symbols-outlined">person</span></button>
+                <button onclick="shopping()"><span class="material-symbols-outlined">shopping_bag</span></button>
+            </div>
+        </div>
+
+        <div class="nav2">
+            <div class="categoryNav">
+                <a class="active" href="#">하드</a>
+                <a href="#">젤리</a>
+                <a href="#">z-플립</a>
+                <a href="#">공지사항</a>
+                <div class="searchNav">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="검색..어.." name="search">
+                        <button type="submit"><i class="fa fa-search"><span class="material-symbols-outlined">
+search</span></i></button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </body>
+
 </html>

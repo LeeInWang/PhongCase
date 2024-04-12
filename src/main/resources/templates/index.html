@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout}">
+<!--<head>-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
@@ -134,8 +136,9 @@
         }
 
     </style>
-<body>
-<div class="wrap" style="padding-top: 10px;">
+<!--<body>-->
+<div layout:fragment="content" class="content">
+<div class="wrap" style="padding-top: 10px;" >
     <div class="nav">
         <div class="navLogo">퐁케이스</div>
         <div class="navIcons">
@@ -201,7 +204,7 @@
     </div>
 </div>
 
-
+</div>
 <script>
     function login() {
         // 로그인
@@ -246,7 +249,10 @@
         dots[slideIndex-1].className += " active";
     }
 </script>
-</body>
+<!--</body>-->
 
-</head>
+<!--</head>-->
+
+
+
 </html>
